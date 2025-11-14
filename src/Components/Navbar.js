@@ -147,11 +147,21 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, userRole }) => {
 
 
 
+  const handleLogoClick = () => {
+    if (userRole === 'admin') {
+      navigate('/admin');
+    } else if (userRole === 'counsellor') {
+      navigate('/counsellor');
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
     <nav className="navbar">
 
       {}
-      <div className="brand-wrapper" onClick={() => navigate('/')}>
+      <div className="brand-wrapper" onClick={handleLogoClick}>
         <span className="company-name">MindCare</span>
       </div>
 
